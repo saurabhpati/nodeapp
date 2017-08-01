@@ -1,10 +1,7 @@
-var app = require('http');
+var express = require('express');
 
-server = app.createServer();
-
-server.on('request',function(req,res){
-	res.writeHead(200,{'content-type':'text/html'});
-	res.end("hello world");
-});
-
-server.listen(3000);
+app = express();
+app.set('port',3000);
+app.set('views',__dirname+'/tpl');
+app.use(express.static(__dirname+'/public'));
+app.set('view engine','')

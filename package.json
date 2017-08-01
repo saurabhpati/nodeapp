@@ -8,5 +8,8 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+echo $this->Form->input('password');  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.10"
+  }
 }
