@@ -11,25 +11,33 @@ var con = mysql.createConnection({
 
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  var sql = "INSERT INTO users (user,pwd) VALUES ? ";
-  var values = [
-  		["anakshiant","player"],
-  		["rama","krishna"],
-  		['chahat',"kora"],
-  ]
-  con.query(sql,[values],function(err,result){
-  	if(err){
-  		console.log(err);
-  	}
-  	console.log("table created"+result.insertId);
-  });
-
-  con.query("SELECT * FROM users",function(err,res){
-  		console.log(res);
-  });
+app.listen(port, 'localhost', () => {
+  console.log('localhost listening on port ' + port);
 });
+
+app.get('/', (request, response) => {
+  response.send('GET called');
+});
+
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+//   var sql = "INSERT INTO users (user,pwd) VALUES ? ";
+//   var values = [
+//   		["anakshiant","player"],
+//   		["rama","krishna"],
+//   		['chahat',"kora"],
+//   ]
+//   con.query(sql,[values],function(err,result){
+//   	if(err){
+//   		console.log(err);
+//   	}
+//   	console.log("table created"+result.insertId);
+//   });
+
+//   con.query("SELECT * FROM users",function(err,res){
+//   		console.log(res);
+//   });
+// });
 
 
